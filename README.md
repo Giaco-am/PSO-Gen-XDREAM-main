@@ -17,7 +17,7 @@ PSO-Gen-XDREAM is an algorithm that extends the [XDREAM](https://klab.tch.harvar
 
 1. **Clone the repository:**
 ```bash
-git clone <repository-url>
+git clone <PSO-Gen-XDREAM-main-url>
 cd PSO-Gen-XDREAM-main
 ```
 

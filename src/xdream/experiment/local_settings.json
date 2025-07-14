@@ -1,0 +1,8 @@
+{
+    "out_dir"      : "/home/gamerio/Desktop/hybridoutput",
+    "weights"      : "/home/gamerio/Desktop/deepsim",
+    "dataset"      : "/home/gamerio/Desktop/archive",
+    "references"   : "/pathto/your/unified reference.pkl",
+    "custom_weights" : "/pathto/your/custom_weigths_folder",
+    "natural_recordings" : "/pathto/your/unified natural_recordings.pkl"
+}

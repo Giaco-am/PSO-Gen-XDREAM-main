@@ -15,7 +15,7 @@ from xdream.core.subject import TorchNetworkSubject
 def generate_log_numbers(N, M): return list(sorted(list(set([int(a) for a in np.logspace(0, np.log10(M), N)]))))
 
 
-NAME   = f'2_07_optparams_varyingGen'  
+NAME   = f'13_07_optvar_moreelitism'  
 
 ITER     = 500              # number of opt iterations                          
 SAMPLE   =  10              # number of experiments ran per neuron

@@ -502,63 +502,63 @@ class MaximizeActivityExperiment(ZdreamExperiment):
         ## 1. SAVE VISUAL STIMULI (SYNTHETIC AND NATURAL)
 #
         ## Create image folder
-        #img_dir = make_dir(path=path.join(self.dir, 'images'), logger=self._logger)
-#       # # We retrieve the best code from the optimizer
-        ## and we use the generator to retrieve the best image
-        #best_gen = self.generator(codes=msg.best_code)[0]  # remove batch size
-        #
-        #to_save: List[Tuple[Image.Image, str]] = [(to_pil_image(best_gen), 'best synthetic')]
-        ## If used we retrieve the best natural image
-        #if self._use_natural:
-        #    best_nat = self._best_nat_img
-        #    to_save.append((to_pil_image(best_nat), 'best natural'))
-        #    to_save.append((concatenate_images(img_list=[best_gen, best_nat]), 'best stimuli'))
-        #
-        ## Saving images
-        #for img, label in to_save:
-        #    
-        #    out_fp = path.join(img_dir, f'{label.replace(" ", "_")}.png')
-        #    self._logger.info(f'> Saving {label} image to {out_fp}')
-        #    img.save(out_fp)
-        #
-        ## Saving gif
-        ## out_fp = path.join(img_dir, 'evolving_best.gif')
-        ## self._logger.info(f'> Saving evolving best stimuli across generations to {out_fp}')
-        ## to_gif(image_list=self._gif, out_fp=out_fp)
-#       # self._logger.info(msg='')
-        #
-        ## 2. SAVE PLOTS
-#       # # Create plot folder
-        #plots_dir = make_dir(path=path.join(self.dir, 'plots'), logger=self._logger)
-        #self._logger.formatting = lambda x: f'> {x}'
-        #
-        ## Plot scores
-        #plot_scores(
-        #    scores=(
-        #        np.stack(msg.scores_gen_history),
-        #        np.stack(msg.scores_nat_history) if self._use_natural else np.array([])
-        #    ),
-        #    stats=(
-        #        msg.stats_gen,
-        #        msg.stats_nat if self._use_natural else dict(),
-        #    ),
-        #    out_dir=plots_dir,
-        #    logger=self._logger
-        #)
-#       # # Plot scores by label
-        #if self._use_natural:
-        #    
-        #    plot_scores_by_label(
-        #        scores=(
-        #            np.stack(msg.scores_gen_history),
-        #            np.stack(msg.scores_nat_history)
-        #        ),
-        #        lbls=self._labels,
-        #        out_dir=plots_dir, 
-        #        dataset=self._dataset,
-        #        logger=self._logger
-        #    )
-        #
+        img_dir = make_dir(path=path.join(self.dir, 'images'), logger=self._logger)
+#        # We retrieve the best code from the optimizer
+        # and we use the generator to retrieve the best image
+        best_gen = self.generator(codes=msg.best_code)[0]  # remove batch size
+        
+        to_save: List[Tuple[Image.Image, str]] = [(to_pil_image(best_gen), 'best synthetic')]
+        # If used we retrieve the best natural image
+        if self._use_natural:
+            best_nat = self._best_nat_img
+            to_save.append((to_pil_image(best_nat), 'best natural'))
+            to_save.append((concatenate_images(img_list=[best_gen, best_nat]), 'best stimuli'))
+        
+        # Saving images
+        for img, label in to_save:
+            
+            out_fp = path.join(img_dir, f'{label.replace(" ", "_")}.png')
+            self._logger.info(f'> Saving {label} image to {out_fp}')
+            img.save(out_fp)
+        
+        # Saving gif
+        # out_fp = path.join(img_dir, 'evolving_best.gif')
+        # self._logger.info(f'> Saving evolving best stimuli across generations to {out_fp}')
+        # to_gif(image_list=self._gif, out_fp=out_fp)
+#        self._logger.info(msg='')
+        
+        # 2. SAVE PLOTS
+#        # Create plot folder
+        plots_dir = make_dir(path=path.join(self.dir, 'plots'), logger=self._logger)
+        self._logger.formatting = lambda x: f'> {x}'
+        
+        # Plot scores
+        plot_scores(
+            scores=(
+                np.stack(msg.scores_gen_history),
+                np.stack(msg.scores_nat_history) if self._use_natural else np.array([])
+            ),
+            stats=(
+                msg.stats_gen,
+                msg.stats_nat if self._use_natural else dict(),
+            ),
+            out_dir=plots_dir,
+            logger=self._logger
+        )
+#        # Plot scores by label
+        if self._use_natural:
+            
+            plot_scores_by_label(
+                scores=(
+                    np.stack(msg.scores_gen_history),
+                    np.stack(msg.scores_nat_history)
+                ),
+                lbls=self._labels,
+                out_dir=plots_dir, 
+                dataset=self._dataset,
+                logger=self._logger
+            )
+        
         self._logger.reset_formatting()
         self._logger.info(msg='')
         

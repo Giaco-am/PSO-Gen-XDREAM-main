@@ -6,7 +6,7 @@
     "shuffle": false,
     "batch_size": 16,
     "net_name": "resnet50",
-    "rec_layers": "56=[638]",
+    "rec_layers": "56=[945]",
     "robust_path": "/pathto/your/custom_weigths_folder",
     "robust_variant": "",
     "w_load_funct": "torch_load_pretrained",
@@ -17,11 +17,11 @@
     "pop_size": 50,
     "sigma0": 1.0,
     "optimizer_type": "cmaes",
-    "name": "13_07_optvar_moreelitism",
+    "name": "17_07_optvar_no_clustering",
     "version": 299,
     "out_dir": "/home/gamerio/Desktop/hybridoutput",
     "iter": 500,
-    "random_seed": 774864,
+    "random_seed": 243304,
     "render": false,
     "title": "MaximizeActivity"
 }

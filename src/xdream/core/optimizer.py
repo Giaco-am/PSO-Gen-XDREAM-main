@@ -1006,7 +1006,7 @@ class HybridOptimizer(Optimizer):
 
             
 
-            'topk': 10,          # Top k selection parameter, 2
+            'topk': 5,          # Top k selection parameter, 2
 
             'temp': 1.2,         # Temperature for selection
 

@@ -115,7 +115,7 @@ The novel Hybrid PSO optimizer combines Particle Swarm Optimization with Genetic
 
 #### **Genetic Algorithm Integration**
 - **Multi-Parent Crossover**: Supports `n_parents=4` with clone allowance (`allow_clones=True`)
-- **Elite Preservation**: Top-k selection strategy with `topk=2` individuals preserved
+- **Elite Preservation**: Top-k selection strategy with `topk` individuals preserved
 - **Temperature-Controlled Selection**: Softmax-based parent selection with `temp=1.2` and decay (`temp_factor=0.98`)
 - **Adaptive Mutation Strategy**: Dynamic mutation size (0.6) and rate (0.6) with intelligent scaling
 

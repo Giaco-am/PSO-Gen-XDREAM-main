@@ -707,21 +707,8 @@ class PSOOptimizer(Optimizer):
             informants.append(informant_indices)
         return informants
 
-    # NON-LINEAR INERTIA SCHEDULER
     def _update_inertia(self):
-        # Only update after we have at least 2 data points
-        #if len(self.history['mean_fitness']) > 1:
-        #    mean_prev = self.history['mean_fitness'][-2]
-        #    mean_cur = self.history['mean_fitness'][-1]
-        #    
-        #    threshold = 0.05*abs(mean_prev)  # e.g. 10% of previous mean  0.1 *
-        #    delta_fitness = abs(mean_cur - mean_prev)
-        #    
-        #    if delta_fitness < threshold:
-        #        # Grow inertia, but more gently
-        #        self.inertia = min(self.inertia_max, self.inertia + 0.01)
-        #    else:
-                # Shrink inertia, but not too drastically
+        
         if self.iteration % 10:    
             self.inertia = max(self.inertia_min, self.inertia - 0.005)
             
@@ -1268,15 +1255,6 @@ class HybridOptimizer(Optimizer):
 
         self._update_pso_after_ga(scores)                       ## APPARETLY THIS YIELDS BETTER RESULTS
 
-
-
-        
-
-        # If < 0.3 of total iterations, do mostly GA
-
-        # if >= 0.3 and < 0.8, a moderate frequency
-
-        # if >= 0.8, do it more frequently for fine-tuning
 
 
 

@@ -23,7 +23,6 @@ from  xdream.core.utils.dataset import ExperimentDataset
 from  xdream.core.utils.misc import SEM, default
 from  xdream.core.utils.types import Codes, Fitness, Stimuli
 
-# --- DEFAULT PLOTTING PARAMETERS ----
 
 _Shapes = Literal['square', 'rect_tall', 'rect_wide']
 _ax_selection = Literal['x', 'y', 'xy']
@@ -42,14 +41,11 @@ def _get_appropriate_fontsz(xlabels: List[str], figure_width: float | int | None
     :rtype: float
     '''
     
-    # Compute longest label length
     max_length = max(len(label) for label in xlabels)
     
-    # In case where figure_width not specified, use default figsize
     figure_width_: int | float = default(figure_width, plt.rcParams['figure.figsize'][0])
         
-    # Compute the appropriate fontsize to avoid overlaps 
-    # NOTE: Ratio factor 0.0085 was found empirically
+    
     fontsz = figure_width_ / len(xlabels) / max_length / 0.0085 
     
     return fontsz
@@ -68,8 +64,7 @@ def subplot_same_lims(axes: NDArray, sel_axs:_ax_selection = 'xy'):
     #get the extremes for x and y axis respectively among subplots
     xlim = [np.min(lims[:,0,:]), np.max(lims[:,0,:])] 
     ylim = [np.min(lims[:,1,:]), np.max(lims[:,1,:])]
-    #for every Axis obj (i.e. for every subplot) set the extremes among all subplots
-    #depending on the sel_axs indicated (either x, y or both (xy))
+    
    
     for ax in axes.flatten():
         ax.set_xlim(xlim) if 'x' in sel_axs else None
@@ -159,7 +154,6 @@ def set_default_matplotlib_params(
 
     return params
 
-# --- STYLING --- 
 
 def customize_axes_bounds(ax: Axes):
     '''
@@ -172,17 +166,14 @@ def customize_axes_bounds(ax: Axes):
     :type ax: Axes
     '''
     
-    # Get tick labels
     tick_positions_x = ax.get_xticklabels()
     tick_positions_y = ax.get_yticklabels()
     
-    # Compute new upper and lower bounds for both axes
     t1x = tick_positions_x[ 1].get_text()
     t2x = tick_positions_x[-2].get_text()
     t1y = tick_positions_y[ 1].get_text()
     t2y = tick_positions_y[-2].get_text()
     
-    # Set new axes bound according to labels type (i.e. numeric or categorical)
     for side, (low_b, up_b) in zip(['left', 'bottom'], ((t1y, t2y), (t1x, t2x))):
         
         # Case 1: Numeric - Set first and last thicks bounds as floats
@@ -241,16 +232,13 @@ def plot_scores(
     :type logger: Logger | None
     '''
 
-    # Preprocessing input
     scores_gen, scores_nat = scores
     stats_gen,  stats_nat  = stats
 
     logger = default(logger, SilentLogger())
 
-    # Plot nat
     use_nat = len(scores_nat) != 0 or stats_nat
     
-    # Retrieve default parameters and retrieve `alpha` parameter
     def_params = set_default_matplotlib_params(shape='rect_wide', l_side = 30)
     
     # PLOT 1. BEST and AVG SCORE TREND
@@ -290,7 +278,6 @@ def plot_scores(
         ax[i].legend()
         # customize_axes_bounds(ax[i])
 
-    # Save or display  
     if out_dir:
         out_fp = path.join(out_dir, 'scores_trend.png')
         logger.info(f'Saving score trend plot to {out_fp}')

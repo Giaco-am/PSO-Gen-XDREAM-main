@@ -1,8 +1,8 @@
 {
-    "out_dir"      : "/home/gamerio/Desktop/hybridoutput",
-    "weights"      : "/home/gamerio/Desktop/deepsim",
-    "dataset"      : "/home/gamerio/Desktop/archive",
-    "references"   : "/pathto/your/unified reference.pkl",
-    "custom_weights" : "/home/gamerio/Desktop/pesi",
-    "natural_recordings" : "/pathto/your/unified natural_recordings.pkl"
+    "out_dir"      : "/path/to/output",
+    "weights"      : "/path/to/deepsim/weights",
+    "dataset"      : "/path/to/dataset",
+    "references"   : "/path/to/your/unified reference.pkl",
+    "custom_weights" : "/path/to/your/custom_weights_folder",
+    "natural_recordings" : "/path/to/your/unified natural_recordings.pkl"
 }

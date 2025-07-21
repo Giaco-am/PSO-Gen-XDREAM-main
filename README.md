@@ -1,6 +1,6 @@
 # PSO-Gen-XDREAM
 
-A novel optimization algorithm framework for neural activity maximization in deep neural networks, combining Particle Swarm Optimization (PSO) with genetic algorithms. This hybrid algorithm is then tested against a genetic algorithm and CMA-ES.
+A novel optimization algorithm for the XDREAM framework for neural activity maximization in deep neural networks, combining Particle Swarm Optimization (PSO) with genetic algorithms. This hybrid algorithm is then tested against a genetic algorithm and CMA-ES.
 
 ## Overview
 

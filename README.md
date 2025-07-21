@@ -108,7 +108,7 @@ The novel Hybrid PSO optimizer combines Particle Swarm Optimization with Genetic
   - **Performance-Based Triggers**: Parameters adapt based on recent fitness history analysis
 
 #### **Advanced PSO Configuration**
-- **Linearly Adaptive Inertia**: Dynamic inertia weight adjustment between `inertia_max=0.99` and `inertia_min=0.95`
+- **Linearly Adaptive Inertia**: Dynamic inertia weight adjustment between `inertia_max` and `inertia_min`
 - **Social Network Topology**: Configurable informant networks with `num_informants=20`
 - **Velocity Constraints**: Bounded velocity updates with `v_clip=0.15`
 - **Enhanced Exploration-Exploitation Balance**: Cognitive (`cognitive=2.5`) and social (`social=2.0`) component weighting

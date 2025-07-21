@@ -141,6 +141,6 @@ Afterwards, you can visualize the results using the provided plotting functions 
 
 
 ### Acknowledgements
-This project is an XDREAM re-implementation made by Lorenzo Tausani [@LorenzoTausani](https://github.com/LorenzoTausani), Sebastiano Quintavalle [@Quinta13](https://github.com/Quinta13), Paolo Muratore [@myscience](https://github.com/myscience) and Giacomo Amerio [@Giaco-am](https://github.com/Giaco-am)
+This project is an XDREAM re-implementation made by Lorenzo Tausani [@LorenzoTausani](https://github.com/LorenzoTausani), Sebastiano Quintavalle [@Quinta13](https://github.com/Quinta13), Paolo Muratore [@myscience](https://github.com/myscience) and Giacomo Amerio [@Giaco-am](https://github.com/Giaco-am).
 
 

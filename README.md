@@ -140,4 +140,7 @@ Once you select a choice, go to the generated `run/cmd2exec.txt` copy it and pas
 Afterwards, you can visualize the results using the provided plotting functions in `demo.ipynb`.
 
 
+### Acknowledgements
+This project is an XDREAM re-implementation made by Lorenzo Tausani [@LorenzoTausani](https://github.com/LorenzoTausani), Sebastiano Quintavalle [@Quinta13](https://github.com/Quinta13), Paolo Muratore [@myscience](https://github.com/myscience) and Giacomo Amerio [@Giaco-am](https://github.com/Giaco-am)
+
 

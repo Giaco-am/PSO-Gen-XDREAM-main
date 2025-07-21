@@ -68,7 +68,7 @@ The included `demo.ipynb` provides a full implementation example of a Maximize A
 #### 2. **Optimizer** (`src/xdream/core/optimizer.py`)
 - **CMAESOptimizer**: Covariance Matrix Adaptation Evolution Strategy
 - **GeneticOptimizer**: Traditional genetic algorithm implementation  
-- **HybridOptimizer**: Novel PSO-based hybrid approach + K-Means clustering
+- **HybridOptimizer**: Novel PSO-GA hybrid approach + K-Means clustering
 
 #### 3. **Subject** (`src/xdream/core/subject.py`)
 - **TorchNetworkSubject**: Wraps PyTorch models for neural activity recording
@@ -88,12 +88,12 @@ The novel Hybrid PSO optimizer combines Particle Swarm Optimization with Genetic
 
 #### **Hybrid Architecture**
 - **GA Phase**: Provides global exploration and generates diverse population across search space
-- **Clustering Phase**: Groups similar solutions and identifies local optima regions
+- **Clustering Phase**: Groups similar solutions in search space
 - **Selective PSO Phase**: Fine-tunes only the most promising solutions in each region
-- **Velocity Reset**: After GA operations, velocities are intelligently reset based on personal best directions
+- **Velocity Reset**: After GA operations, velocities are reset based on personal best directions
 
 #### **Dynamic Scheduling System**
-- **Multi-Stage PSO Frequency**: 
+- **Multi-Stage PSO phase occurency**: 
   - Early phase (< 60% iterations): Primarily GA with PSO every 5 steps
   - Middle-Late phase (60-85% iterations): Balanced approach with PSO every 2 steps  
 

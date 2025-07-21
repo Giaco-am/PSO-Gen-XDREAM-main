@@ -119,12 +119,6 @@ The novel Hybrid PSO optimizer combines Particle Swarm Optimization with Genetic
 - **Temperature-Controlled Selection**: Softmax-based parent selection with `temp=1.2` and decay (`temp_factor=0.98`)
 - **Adaptive Mutation Strategy**: Dynamic mutation size and rate with intelligent scaling
 
-#### **Performance Monitoring & Analytics**
-- **Real-time Metrics**: Continuous tracking of mean and best fitness evolution
-- **Historical Analysis**: 15-step rolling window for trend detection and parameter adaptation
-- **Convergence Indicators**: Integrated stagnation and diversity metrics for optimization health assessment
-
-
 
 This hybrid approach leverages the complementary strengths of both algorithms: GA's robust exploration capabilities for escaping local optima, and PSO's efficient exploitation for fine-tuning to promising regions of the search space.
 
